@@ -51,9 +51,9 @@ class Circle {
 		this.x += this.dx;
 		this.y += this.dy;
 
-		if (Math.abs(mouse.x - this.x) < 50 && Math.abs(mouse.y - this.y) < 50) {
+		if (Math.abs(mouse.x - this.x) < 50 && Math.abs(mouse.y - this.y) < 100) {
 			if (this.radius <= maxRadius) {
-				this.radius += 1;
+				this.radius += 5;
 			}
 		} else if (this.radius > this.minRadius) {
 			this.radius -= 1;
@@ -71,13 +71,13 @@ let circleArray;
 
 function init() {
 	circleArray = [];
-	for (let i = 0; i < 500; i++) {
+	for (let i = 0; i < 1000; i++) {
 		let radius = Math.random() * 7 + 3;
 		let x = Math.random() * (innerWidth - radius * 2) + radius;
 		let y = Math.random() * (innerHeight - radius * 2) + radius;
 		let dx = (Math.random() - 0.5) * 2;
 		let dy = (Math.random() - 0.5) * 2;
-		circleArray.push(new Circle(x, y, dx, dy, radius));
+		circleArray.push(new Circle(x, y, dx, dy, 0));
 	}
 }
 

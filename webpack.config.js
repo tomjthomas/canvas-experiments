@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: "./collision/js/canvas.js",
+	entry: "./connections/script.js",
 	output: {
 		path: __dirname + "/dist/",
 		filename: "./js/canvas.bundle.js",
@@ -32,7 +32,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
-			template: "collision/src/index.html",
+			template: "connections/index.html",
 		}),
 	],
 	watch: true,

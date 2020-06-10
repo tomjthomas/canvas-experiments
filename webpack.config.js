@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: "./connections/script.js",
+	entry: "./eyes/script.js",
 	output: {
 		path: __dirname + "/dist/",
 		filename: "./js/canvas.bundle.js",
@@ -32,7 +32,7 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			filename: "index.html",
-			template: "connections/index.html",
+			template: "eyes/index.html",
 		}),
 	],
 	watch: true,

@@ -24,7 +24,7 @@ function randomColour() {
 	return colour;
 }
 
-window.addEventListener("resize", function (event) {
+window.addEventListener("resize", function () {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 
@@ -60,10 +60,7 @@ class Ball {
 			this.dy += gravity;
 		}
 
-		if (
-			this.x + this.radius + this.dx > canvas.width ||
-			this.x - this.radius <= 0
-		) {
+		if (this.x + this.radius + this.dx > canvas.width || this.x - this.radius <= 0) {
 			this.dx = -this.dx;
 		}
 
@@ -75,13 +72,9 @@ class Ball {
 			this.dx = this.dx * groundfriction;
 		}
 
-		if (
-			Math.abs(mouse.x - this.x) <= 100 &&
-			Math.abs(mouse.y - this.y) <= 100
-		) {
+		if (Math.abs(mouse.x - this.x) <= 100 && Math.abs(mouse.y - this.y) <= 100) {
 			this.dy = -(this.dy + clickForce / this.radius);
-			this.dx =
-				(Math.random() - 0.5) * 2 * (this.dx + clickForce / this.radius);
+			this.dx = (Math.random() - 0.5) * 2 * (this.dx + clickForce / this.radius);
 		}
 		this.x += this.dx;
 		this.y += this.dy;
